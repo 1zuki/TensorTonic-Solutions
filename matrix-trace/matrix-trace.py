@@ -6,9 +6,8 @@ def matrix_trace(A):
     """
     # Write code here
     A = np.array(A)
-    sum = 0
-
-    idx = np.arange(A.shape[0])
-    sum += A[idx, idx].sum()
-
-    return sum
+    
+    n = A.shape[0]
+    idx = np.arange(n)
+    
+    return A[idx, idx].sum()
