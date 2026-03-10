@@ -14,9 +14,12 @@ def batch_generator(X, y, batch_size, rng=None, drop_last=False):
         rng.shuffle(indices)
     else:
         np.random.shuffle(indices)
+
+    if drop_last:
+        N -= batch_size
     
-    for start in range(0, N - (batch_size if drop_last else 0), batch_size):
+    for start in range(0, N, batch_size):
         end = start + batch_size
         X_batch = X[indices[start:end]]
-        y_batch = y[indices[start:end]]
-        yield (X_batch, y_batch)
+        Y_batch = y[indices[start:end]]
+        yield X_batch, Y_batch
