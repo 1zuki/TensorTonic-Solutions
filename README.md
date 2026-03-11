@@ -107,7 +107,8 @@ No heavy abstraction if the point is to understand the algorithm.
 
 ## Disclaimer
 
-Readme made by: @Acceleratorer
+Readme made by: @Acceleratorer.
+
 Uoc gi accel
 
 This repository contains my own solutions to TensorTonic problems for learning and reference purposes.
