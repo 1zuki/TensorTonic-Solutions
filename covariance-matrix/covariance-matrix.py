@@ -1,18 +1,11 @@
 import numpy as np
 
-def covariance_matrix(X):
+def covariance_matrix(X: list) -> np.ndarray:
     """
-    Compute covariance matrix from dataset X.
+    Returns the covariance matrix as a NumPy array.
     """
     # Write code here
-    X = np.array(X)
-    
-    u = np.mean(X, axis = 0)
-    X_cen = X - u
+    X = np.asarray(X, dtype=float)
+    X_c = X - np.mean(X, axis=0)
 
-    N = len(X)
-    if X.ndim != 2 or N < 2:
-        return None
-
-    sigma = (1 / (N - 1)) * X_cen.T @ X_cen
-    return sigma
+    return X_c.T @ X_c / (X.shape[0] - 1)
