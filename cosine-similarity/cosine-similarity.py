@@ -1,15 +1,14 @@
 import numpy as np
 
-def cosine_similarity(a, b):
+def cosine_similarity(a: list, b: list) -> float:
     """
-    Compute cosine similarity between two 1D NumPy arrays.
-    Returns: float in [-1, 1]
+    Returns the cosine similarity as a Python float.
     """
-    a = np.array(a)
-    b = np.array(b)
-
-    mau = np.linalg.norm(a) *  np.linalg.norm(b)
-    if mau == 0:
-        return 0
+    # Write code here
+    a = np.asarray(a, dtype=float)
+    b = np.asarray(b, dtype=float)
     
-    return np.dot(a, b) / mau
+    numerator = np.dot(a, b)
+    denominator = np.linalg.norm(a) * np.linalg.norm(b)
+
+    return 0.0 if denominator == 0 else float(numerator / denominator)
