@@ -1,15 +1,8 @@
 import numpy as np
 
-def matrix_transpose(A):
+def matrix_transpose(A: list) -> np.ndarray:
     """
-    Return the transpose of matrix A (swap rows and columns).
+    Returns the transposed matrix as a NumPy array.
     """
     # Write code here
-    A = np.array(A)
-    AT = np.zeros(A.shape[::-1])
-
-    for y in range(len(AT)):
-        for x in range(len(AT[y])):
-            AT[y][x] = A[x][y]
-
-    return AT
+    return np.asarray(A, dtype=float).T
